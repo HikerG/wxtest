@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view >
+  <view >
+  <text>媛酱的天气预报\n</text>
+  <text>版本号：v1.0.1\n</text>
+  <text>数据来源：和风天气\n</text>
+  <text>开发时间：2018年12月\n</text>
+  </view>
+  <view>
+    <text>\n作者:\n\n</text>
+    <image src="../../images/about/head.jpg" class="img"></image>
+    <text>\nHiker</text>
+  </view>
+</view>

@@ -34,7 +34,7 @@ Page({
     var that = this
     var url = "https://api.map.baidu.com/geocoder/v2/";
     var params = {
-      ak: "1G50Crx5QIKWy5o4R5Q1ONFSgmFIxfIR",
+      ak: "lDPmwz4UvHMDwztVFH0b0dygkoNtNKGb",
       output: "json",
       location: latitude + "," + longitude
     }
@@ -63,29 +63,28 @@ Page({
   //获取天气信息
   getWeahter: function (city) {
     var that = this
-    var url = "https://free-api.heweather.com/v5/weather"
-    var params = {
-      city: city,
-      key: "894fc2a749104d679fa022c3e71afe83"
+    var url = "https://free-api.heweather.com/s6/weather"
+    var url2 = "https://free-api.heweather.com/s6/air"
+    var parameters = {
+      location: city,
+      key: "487e784e789b45d89990ec0f66fd3f7d"
     }
     wx.request({
       url: url,
-      data: params,
+      data: parameters,
       success: function (res) {
-        var tmp = res.data.HeWeather5[0].now.tmp;
-        var txt = res.data.HeWeather5[0].now.cond.txt;
-        var code = res.data.HeWeather5[0].now.cond.code;
-        var qlty = res.data.HeWeather5[0].aqi.city.qlty;
-        var dir = res.data.HeWeather5[0].now.wind.dir;
-        var sc = res.data.HeWeather5[0].now.wind.sc;
-        var hum = res.data.HeWeather5[0].now.hum;
-        var fl = res.data.HeWeather5[0].now.fl;
-        var daily_forecast = res.data.HeWeather5[0].daily_forecast;
+        var tmp = res.data.HeWeather6[0].now.tmp;
+        var txt = res.data.HeWeather6[0].now.cond_txt;
+        var code = res.data.HeWeather6[0].now.cond_code;
+        var dir = res.data.HeWeather6[0].now.wind_dir;
+        var sc = res.data.HeWeather6[0].now.wind_sc;
+        var hum = res.data.HeWeather6[0].now.hum;
+        var fl = res.data.HeWeather6[0].now.fl;
+        var daily_forecast = res.data.HeWeather6[0].daily_forecast;
         that.setData({
           tmp: tmp,
           txt: txt,
           code: code,
-          qlty: qlty,
           dir: dir,
           sc: sc,
           hum: hum,
@@ -96,6 +95,21 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
+    wx.request({
+      url: url2,
+      data: parameters,
+      success: function (res) {
+        var qlty = res.data.HeWeather6[0].air_now_city.qlty;
+        var pm25 = res.data.HeWeather6[0].air_now_city.pm25;
+        // var air_forecast = res.data.HeWeather6[0].air_forecast;
+        that.setData({
+          qlty: qlty,
+          pm25: pm25
+          // air_forecast: air_forecast
+        })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
-
 })
