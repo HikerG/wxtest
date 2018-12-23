@@ -1,0 +1,57 @@
+<!--pages/life/life.wxml-->
+<image src="../../images/bg2.png" class="bg"></image>
+<view class="container">
+<view class="suggestion ">  
+  <view class="list"> 
+    <view class="list_l">
+      <image src="../../images/icons/01.png"></image>   
+      <text><text class="b">空气质量：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{air}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/02.png"></image> 
+      <text><text class="b">舒适度：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{comf}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/03.png"></image> 
+      <text><text class="b">穿着建议：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{drsg}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/04.png"></image> 
+      <text><text class="b">流感指数:\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{flu}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/05.png"></image> 
+      <text><text class="b">运动指数：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{sport}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/06.png"></image> 
+      <text><text class="b">外出指数：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{trav}}</text> </view> 
+  </view> 
+  <view class="list"> 
+    <view class="list_l"> 
+      <image src="../../images/icons/07.png"></image> 
+      <text><text class="b">紫外线强度：\n</text></text> 
+    </view> 
+    <view class="list_r"> <text>\n{{uv}}</text> </view> 
+  </view> 
+</view> 
+
+ </view>
+ 

@@ -1,6 +1,4 @@
 /**index.wxss**/
- 
-/**common css**/
 .w{
   color: white;
 }
